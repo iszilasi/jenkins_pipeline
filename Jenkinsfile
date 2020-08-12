@@ -10,7 +10,7 @@ pipeline {
 	    }
             steps { 
 	        git url: 'https://github.com/iszilasi/helloworld.git'
-                cat README.md 
+                ls 
             }
         }
         stage('Test'){
