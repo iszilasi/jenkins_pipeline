@@ -6,15 +6,15 @@ pipeline {
     stages {
         stage('Build') {
 	    agent {
-	       label {'!static'}
+	       label '!static'
 	    }
             steps { 
-                sh 'cat README' 
+                cat README 
             }
         }
         stage('Test'){
             steps {
-                sh 'echo "test"'
+                echo "test"
             }
         }
     }
