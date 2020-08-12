@@ -3,13 +3,13 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+    environment {
+    	IMG_NAME='iszilasi/helloworld'
+    }
     stages {
         stage('Build') {
 	    agent {
 	       label '!static'
-	    }
-	    environment {
-		IMG_NAME='iszilasi/helloworld'
 	    }
             steps { 
 	        git url: 'https://github.com/iszilasi/helloworld.git'
