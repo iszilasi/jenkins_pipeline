@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
 	    agent {
-	       label: {'!static'}
+	       label {'!static'}
 	    }
             steps { 
                 sh 'cat README' 
