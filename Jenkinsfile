@@ -9,7 +9,8 @@ pipeline {
 	       label '!static'
 	    }
             steps { 
-                cat README 
+	        git url: 'https://github.com/iszilasi/helloworld.git'
+                cat README.md 
             }
         }
         stage('Test'){
