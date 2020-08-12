@@ -20,10 +20,10 @@ pipeline {
 		sh 'docker push ${IMG_NAME}:${BUILD_NUMBER}'
             }
         }
-        stage('Test'){
-            steps {
-                echo "test"
-            }
-        }
+    }
+    post {
+    	success {
+		build job: 'Run test on project', parameters: [ string:(name: 'IMAGENAME_TAG', value: ${IMG_NAME}:${BUILD_NUMBER} ]
+	}
     }
 }
