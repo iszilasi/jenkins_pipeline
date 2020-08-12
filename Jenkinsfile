@@ -23,7 +23,7 @@ pipeline {
     }
     post {
     	success {
-		build job: 'Run test on project', parameters: [ [$class: 'StringParameterValue', name: 'IMAGENAME_TAG', value: IMG_NAME:BUILD_NUMBER ]]
+		build job: 'Run test on project', parameters: [ [$class: 'StringParameterValue', name: 'IMAGENAME_TAG', value: IMG_NAME + ":" + BUILD_NUMBER ]]
 	}
     }
 }
