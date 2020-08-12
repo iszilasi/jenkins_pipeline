@@ -1,10 +1,13 @@
 pipeline { 
-    agent !static 
+    agent none
     options {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
+	    agent {
+	       label: {'!static'}
+	    }
             steps { 
                 sh 'cat README' 
             }
